@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Classificacao.ApplicationCore\Classificacao.ApplicationCore.csproj" />
+    <ProjectReference Include="..\Classificacao.ApplicationLayer\Classificacao.ApplicationLayer.csproj" />
+    <ProjectReference Include="..\Classificacao.Infrastructure\Classificacao.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
