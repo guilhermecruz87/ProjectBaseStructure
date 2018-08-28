@@ -10,6 +10,7 @@ import VueAnimateNumber from 'vue-animate-number'
 import VueGmaps from 'vue-gmaps'
 import VueLayers from 'vuelayers'
 import VCharts from 'v-charts'
+
 // Resource logic
 Vue.use(Resource)
 Vue.http.options.emulateJSON = true

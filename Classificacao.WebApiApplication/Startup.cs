@@ -33,7 +33,17 @@ namespace Classificacao.WebApiApplication
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddMvcCore(options =>
+            {
+                options.RequireHttpsPermanent = true;
+                options.RespectBrowserAcceptHeader = true;
+            })
+            .AddCors()
+            .AddJsonFormatters();
+            //.AddFormatterMappings()
+            //.AddApiExplorer()
 
             services.AddAutoMapper();
 

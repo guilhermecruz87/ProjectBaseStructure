@@ -15,17 +15,10 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
           <li class="header">FILAS</li>
-          <li>
-            <router-link to="/citacao">
-              <span>
-                Fila 1
-              </span>
-            </router-link>
-          </li>
           <li v-for="fila in Filas">
             <router-link to="/citacao">
               <span>
-                {{fila.Nome}}
+                {{fila.nome}}
               </span>
             </router-link>
           </li>
@@ -56,9 +49,14 @@
     data: function () {
       return { Filas: [] }
     },
+    created: function () {
+      this.getFilas()
+    },
     methods: {
-      guilherme: function () {
-        alert('chegou no ready')
+      getFilas: function () {
+        this.$http.get('api/fila').then(response => {
+          this.Filas = response.data
+        })
       }
     }
   }
