@@ -33,17 +33,7 @@ namespace Classificacao.WebApiApplication
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            services.AddMvcCore(options =>
-            {
-                options.RequireHttpsPermanent = true;
-                options.RespectBrowserAcceptHeader = true;
-            })
-            .AddCors()
-            .AddJsonFormatters();
-            //.AddFormatterMappings()
-            //.AddApiExplorer()
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddAutoMapper();
 
@@ -78,6 +68,9 @@ namespace Classificacao.WebApiApplication
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseCors(builder => builder.WithOrigins("http://localhost:8080")
+                .AllowAnyMethod()
+                .WithHeaders("authorization", "accept", "content-type", "origin"));
 
             app.UseMvc(routes =>
             {

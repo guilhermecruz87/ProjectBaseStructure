@@ -16,7 +16,7 @@
         <ul class="sidebar-menu">
           <li class="header">FILAS</li>
           <li v-for="fila in Filas">
-            <router-link to="/citacao">
+            <router-link :to="{ path: '/citacao/' + fila.id }">
               <span>
                 {{fila.nome}}
               </span>
@@ -54,9 +54,13 @@
     },
     methods: {
       getFilas: function () {
-        this.$http.get('api/fila').then(response => {
-          this.Filas = response.data
-        })
+        this.$http.get('http://localhost/WebApiClassificacao/api/fila')
+          .then(response => {
+            this.Filas = response.data
+          })
+          .catch(error => {
+            console.log(JSON.stringify(error))
+          })
       }
     }
   }

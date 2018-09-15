@@ -1,4 +1,5 @@
-﻿using Classificacao.ApplicationCore.Entity;
+﻿using System.Collections.Generic;
+using Classificacao.ApplicationCore.Entity;
 using Classificacao.ApplicationCore.Interfaces.Repository;
 using Classificacao.ApplicationCore.Interfaces.Services;
 
@@ -11,6 +12,11 @@ namespace Classificacao.ApplicationCore.Services
         public CitacaoService(ICitacaoRepository repository) : base(repository)
         {
             _citacaoRepository = repository;
+        }
+
+        public IList<Citacao> GetCitacoesByIdFila(int idFila)
+        {
+            return _citacaoRepository.GetCitacoesByIdFila(idFila);
         }
     }
 }

@@ -25,15 +25,16 @@ namespace Classificacao.WebApiApplication.Controllers
         public IList<CitacaoViewModel> Get()
         {
             var citacaoViewModel = _mapper.Map<IList<Citacao>, IList<CitacaoViewModel>>(_citacaoApp.ListAll());
-            return citacaoViewModel; ;
+            return citacaoViewModel;
         }
 
-        //// GET: api/Citacao/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        // GET: api/Citacao/5
+        [HttpGet("{id}", Name = "Get")]
+        public IList<CitacaoViewModel> Get(int id)
+        {
+            var citacaoViewModel = _mapper.Map<IList<Citacao>, IList<CitacaoViewModel>>(_citacaoApp.GetCitacoesByIdFila(id));
+            return citacaoViewModel;
+        }
 
         //// POST: api/Citacao
         //[HttpPost]

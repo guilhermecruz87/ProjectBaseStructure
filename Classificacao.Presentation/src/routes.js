@@ -80,7 +80,7 @@ const routes = [
         component: DashboardSecond
       },
       {
-        path: '/citacao',
+        path: '/citacao/:id',
         name: 'citacao',
         component: Citacao
       }

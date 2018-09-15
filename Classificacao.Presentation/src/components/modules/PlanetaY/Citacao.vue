@@ -20,7 +20,7 @@
               <span>BARRA DE AÇÃO EM MASSA</span>
             </div>
 
-            <div class="citacao-content" style="background-color: #CCF5FF;">
+            <div class="citacao-content" v-for="citacao in Citacoes" style="background-color: #CCF5FF;">
               <!--CHECKBOX-->
               <div class="citacao-checkbox">
                 <input type="checkbox" value="false" />
@@ -28,21 +28,20 @@
               <div class="citacao-header">
                 <!--IMG PROFILE-->
                 <div style="float: left;">
-                  <img src="https://graph.facebook.com/629325563895167/picture" width="30" height="30" />
+                  <img v-bind:src="citacao.urlProfile" width="30" height="30" />
                 </div>
                 <!--TITLE-->
                 <div style="float: left;">
                   <span class="citacao-title">
-                    HML PlantY
+                    {{ citacao.autor }}
                   </span>
                 </div>
               </div>
+
               <div class="citacao-body">
                 <!--TEXTO-->
                 <div>
-                  Bom Dia Pessoal!!!!
-                  Tudo Certo Aí?!?!?!
-                  Vamos aos Testes...
+                  <span v-html="citacao.texto"></span>
                 </div>
                 <!--IDM's-->
                 <div>
@@ -148,135 +147,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="citacao-content" style="background-color: #D6F5D6;">
-              <!--CHECKBOX-->
-              <div class="citacao-checkbox">
-                <input type="checkbox" value="false" />
-              </div>
-              <div class="citacao-header">
-                <!--IMG PROFILE-->
-                <div style="float: left;">
-                  <img src="https://graph.facebook.com/337508636459223/picture" width="30" height="30" />
-                </div>
-                <!--TITLE-->
-                <div style="float: left;">
-                  <span class="citacao-title">
-                    Guilherme FanPage
-                  </span>
-                </div>
-              </div>
-              <div class="citacao-body">
-                <!--TEXTO-->
-                <div>
-                  Bom Dia Pessoal!!!!
-                  Tudo Certo Aí?!?!?!
-                  Vamos aos Testes...
-                </div>
-                <!--IDM's-->
-                <div>
-                  <br />
-                  <br />
-                  <div style="display: block">
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">captação</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">empregabilidade</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">localização</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">atuação etica</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">corpo docente</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">credenciamento mec</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">preço</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">qualidade ensino</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">infraestrutura</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">relacionamento</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;"></span>
-                      <div style="width: 80px;">
-                        <br />
-                        <br />
-                        <br />
-                      </div>
-                    </div>
-                    <div class="btn-group-vertical" role="group" style="width: 90px;">
-                      <span style="word-break: break-word;">classificação</span>
-                      <div style="width: 80px;">
-                        <button type="button" class="btn btn-default" style="width: 100%">positivo</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">neutro</button>
-                        <button type="button" class="btn btn-default" style="width: 100%">negativo</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -321,6 +192,34 @@
 </style>
 <script>
   export default {
-    name: 'citacao'
+    name: 'citacao',
+    data: function () {
+      return { Citacoes: [] }
+    },
+    created: function () {
+      this.getCitacoes()
+    },
+    updated: function () {
+      this.$nextTick(function () {
+        // Código que irá rodar apenas após toda
+        // a árvore do componente ter sido re-renderizada
+
+        console.log('updated')
+        // this.getCitacoes()
+      })
+    },
+    methods: {
+      getCitacoes: function () {
+        var url = 'http://localhost/WebApiClassificacao/api/citacao/' + this.$route.params.id
+
+        this.$http.get(url)
+          .then(response => {
+            this.Citacoes = response.data
+          })
+          .catch(error => {
+            console.log(JSON.stringify(error))
+          })
+      }
+    }
   }
 </script>
